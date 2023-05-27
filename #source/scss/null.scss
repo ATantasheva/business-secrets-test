@@ -36,7 +36,7 @@ body {
    height: 100%;
    margin: 0;
    padding: 0;
-   min-width: $minwidth;
+   //min-width: $minwidth;
    position: relative;
    width: 100%;
    color: #333333;
@@ -46,12 +46,18 @@ body {
 
 body {
    font-size: 100%;
-   line-height: 1;
-   font-size: 14px;
+   font-size: 17px;
+   line-height: 165%;
    font-family: $fontfamily;
    -ms-text-size-adjust: 100%;
    -moz-text-size-adjust: 100%;
    -webkit-text-size-adjust: 100%;
+   @media (max-width:$md3+px) {
+      font-size: 15px;
+      line-height: 160%;
+   }
+
+
 
    &.lock {
       overflow: hidden;
@@ -106,7 +112,6 @@ h3,
 h4,
 h5,
 h6 {
-   font-weight: inherit;
-   font-size: inherit;
+  
 }
 

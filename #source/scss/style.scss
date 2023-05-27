@@ -5,18 +5,18 @@
 //<Подключаем шрифты>=======================================================================================
 //поставить кавычки в скобки
 
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic-ext');
 
 //</Подключаем шрифты>=======================================================================================
-/*
+
 @font-face {
-	font-family: 'UniSans';
-	src: url('../fonts/UniSansHeavyCAPS.eot');
-	src: local('☺'), url('../fonts/UniSansHeavyCAPS.woff') format('woff'), url('../fonts/UniSansHeavyCAPS.ttf') format('truetype');
+	font-family: 'Tinkoff Sans';
+	src: url('/fonts/pfhighwaysanspro-regular.eot');
+	src: local('☺'), url('/fonts/pfhighwaysanspro-regular.woff2') format('woff2'), url('/fonts/pfhighwaysanspro-regular.woff') format('woff'), url('/fonts/pfhighwaysanspro-regular.ttf') format('truetype');
 	font-weight: 900;
    font-style: normal;
 }
-*/
+
 
 //<Шрифт по умолчанию>==========================================================================================
 $fontfamily: "Roboto";
@@ -26,14 +26,15 @@ $fontfamily: "Roboto";
 
 
 //<ПЕРЕМЕННЫЕ>=====СЕТКА АДАПТИВА ======================================================================================================
-$minwidth: 320px;
+//$minwidth: 320px;
 $mwidth: 1600px; //ширина всего полотна макета от дизайнера
 $mw: 1280; //ширина контейнера ВСЕГДА!! - добавила отступы без-ти
 // на основании нее остальные брейкпойнты
 $md1: $mw+12;
 $md2: 991.98; //планшет
 $md3: 767.98; //бол смартфон
-$md4: 319.98; //мал смартфон
+$md4: 479.98; //мал смартфон
+$md5: 319.98; //мал смартфон
 
 //</ПЕРЕМЕННЫЕ>==============================================================================================================
 
@@ -63,7 +64,6 @@ $md4: 319.98; //мал смартфон
    width: 100%;
    padding: 0px 20px; //отступы без-ти
 
-
    @media (max-width:$md1+px) {
       max-width: 970px;
    }
@@ -73,8 +73,17 @@ $md4: 319.98; //мал смартфон
    }
 
    @media (max-width:$md3+px) {
+      max-width: 608px;
+      margin: 0 auto;
+    // padding: 0 10px;
+   }
+   @media (max-width:$md4+px) {
       max-width: none;
-      padding: 0 10px;
+      margin: 0 auto;
+    // padding: 0 10px;
+   }
+   @media (max-width:$md5+px) {
+      max-width: none;
    }
 }
 .main {
@@ -83,6 +92,10 @@ $md4: 319.98; //мал смартфон
 .container__border {
    border: 1px solid #DCE2E8;
    padding: 48px 48px 50px 48px;
+   //max-width: 784px;
+   @media (max-width:$md3+px) {
+      padding:  24px 24px 36px 24px;
+   }
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
@@ -92,7 +105,89 @@ $md4: 319.98; //мал смартфон
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
-//@import "header.scss";
+@import "header.scss";
 @import "footer.scss";
+.main {
+}
+.wrapper {
+}
+.container {
+
+		&__border {
+		}
+}
+.content {
+margin: 0px 0px 48px 0px;
+		&__title {
+         font-size: 28px;
+         line-height: 114%;
+         font-feature-settings: 'liga' off;
+         margin: 0px 0px 16px 0px;
+         @media (max-width:$md3+px)  {
+            font-size: 21px;
+line-height: 133%;
+         }
+		}
+
+		
+}
+.text {
+margin: 0px 0px 25px 0px;
+
+@media (max-width:$md5+px) {
+max-width: 240px;
+}
+		&__bold {
+         font-weight: 700;
+		}
+
+		&__list.decision {
+         li::before {
+            content: '✅';
+            width: 18px;
+            height: 15px;
+            margin: 0px 7px 0px 0px;
+         }
+		}
+      &__list.tasks {
+         li::before {
+            content: '👉';
+            width: 18px;
+            height: 15px;
+            margin: 0px 7px 0px 0px;
+         }
+		}
+}
+.link__title {
+   font-size: 28px;
+   line-height: 114%;
+   font-weight: 400;
+   font-feature-settings: 'liga' off;
+   color: #597DB3;
+border-bottom: 1px solid rgb(89, 125, 179, 0.2);
+@media (max-width:$md4+px) {
+   font-size: 21px;
+   line-height: 133%;
+}
 
 
+}
+.tasks li, .decision li {
+   margin: 0px 0px 15px 0px;
+}
+
+
+.tasks__content {
+   padding: 0px 0px 30px 0px;
+   @media (max-width:$md3+px)  {
+      padding: 0px 0px 0px 0px;
+   }
+ }
+ .decision__content {
+   @media (max-width:$md5+px)  {
+      max-width: 165px;
+   }
+ }
+ .arrow {
+ margin: 0px 0px 3px 0px;
+ }

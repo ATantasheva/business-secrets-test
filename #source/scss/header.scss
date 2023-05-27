@@ -1,30 +1,118 @@
 .header {
-
+margin: 0px 0px 48px 0px;
+@media (max-width:$md5+px) {
+   margin: 0px 0px 40px 0px;
+}
    &__content {
       max-width: 784px;
    }
 
    &__title {
+      
    }
+.title__name {
 
+}
    &__block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      @media (max-width:$md4+px) {
+         flex-wrap: wrap;
+      }
+
    }
 
    &__logo {
+     margin: 0px 10px 0px 10px;
+     @media (max-width:$md3+px) {
+      margin: 0px 10px 12px 10px;
+     }
+            @media (max-width:$md5+px) {
+               margin: 0px 0px 12px 0px;
+            }
+           img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+           }
+   
+   }
+   .header__round {
+   
    }
 }
 .container {
 }
 .new-case {
-}
-.title {
-}
-.product {
-}
-.link {
-
-   &__product {
+   background: #FFDD2D;
+   padding: 2px 10px 4px;
+   margin: 0px 0px 12px 0px;
+   font-weight: 700;
+   font-size: 13px;
+   line-height: 154%;
+   display: inline-block;
+   @media (max-width:$md5+px)  {
+      margin: 0px 0px 20px 0px;
    }
 }
-.lihk {
+.title {
+   font-size: 36px;
+line-height: 122%;
+font-feature-settings: 'liga' off;
+color: #111111;
+margin: 0px 0px 40px 0px;
+@media (max-width:$md3+px) {
+   font-size: 24px;
+   margin: 0px 0px 28px 0px;
+   line-height: 117%;
+   font-weight: 400;
+
+   @media (max-width:$md5+px) {
+      max-width: 240px;
+   }
 }
+
+@media (max-width:$md5+px)  {
+   margin: 0px 0px 12px 0px;
+}
+
+
+}
+.product {
+   color: #808C9E;
+   margin: 0px 0px 8px 0px;
+   font-weight: 400;
+   @media (max-width:$md5+px) {
+      font-size: 15px;
+   }
+}
+.list__product {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+justify-content: flex-start;
+@media (max-width:$md5+px) {
+   display: block;
+   text-align: left;
+
+}
+   .link__product {
+
+      
+      a {
+         color: #808C9E;
+         background: #DCE2E8;
+         margin-right: 12px;
+         padding: 0px 2px 0px 2px;
+         font-family: $fontfamily;
+         font-weight: 400;
+         @media (max-width:$md5+px) {
+            margin-right: 0px;
+            margin: 0px 0px 12px 0px;
+         }
+      }
+   }
+}
+ 
