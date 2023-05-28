@@ -92,7 +92,7 @@ $md5: 319.98; //мал смартфон
 .container__border {
    border: 1px solid #DCE2E8;
    padding: 48px 48px 50px 48px;
-   //max-width: 784px;
+   max-width: 784px;
    @media (max-width:$md3+px) {
       padding:  24px 24px 36px 24px;
    }

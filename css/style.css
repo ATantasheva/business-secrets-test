@@ -164,6 +164,7 @@ img {
 .container__border {
   border: 1px solid #DCE2E8;
   padding: 48px 48px 50px 48px;
+  max-width: 784px;
 }
 @media (max-width: 767.98px) {
   .container__border {
